@@ -4,7 +4,6 @@
 */
 window.addEventListener('load', (e) => {
 
-  const followersArray = [];
 
 const cards = document.querySelector('.cards')
 console.log (cards);
@@ -12,6 +11,8 @@ console.log (cards);
 
 
 function ultimantCardCreator(follower) {
+
+  const followersArray = [];
 
   follower.forEach(element => {
     followersArray.push('https://api.github.com/users/' + element);
@@ -84,6 +85,8 @@ const address = document.createElement('a');
 const followers = document.createElement('p');
 const following = document.createElement('p');
 const bio = document.createElement('p');
+const oddlyLongDescription = document.createElement('p');
+const button = document.createElement('p')
 //////////////
 
 card.appendChild(img);
@@ -96,12 +99,16 @@ profile.appendChild(address);
 cardInfo.appendChild(followers);
 cardInfo.appendChild(following);
 cardInfo.appendChild(bio);
+cardInfo.appendChild(oddlyLongDescription);
+cardInfo.appendChild(button);
 ///////////////
 
 card.classList.add('card');
 cardInfo.classList.add('card-info');
 name.classList.add('name');
 username.classList.add('username');
+oddlyLongDescription.classList.add('card-open');
+button.classList.add('button')
 ///////////
 img.src = object.data.avatar_url;
 name.textContent = object.data.name;
@@ -111,9 +118,19 @@ address.textContent = object.data.url;
 followers.textContent = object.data.followers;
 following.textContent = object.data.following;
 bio.textContent = object.data.bio;
+button.textContent = "click to read more!";
+oddlyLongDescription.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel repudiandae eveniet hic illum ullam sit voluptatibus nihil similique ea libero dignissimos odit itaque, debitis, incidunt aliquid, odio nostrum quos? Laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate numquam perferendis assumenda veritatis, laborum dolorem nihil illo recusandae repellendus similique. Enim repellendus debitis unde velit eius officia, sapiente perferendis aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae exercitationem debitis placeat eius aspernatur saepe autem a vitae rerum ad, id, tempore, ipsum deleniti nesciunt ratione dolorum ducimus! Repellat, sunt!'
 //////
 
+button.addEventListener('click', event => {
+  console.log('button clicked', event.target)
+  oddlyLongDescription.classList.toggle('card-open');
+  
+})
+
+
 return card;
+
 
 
 
@@ -127,6 +144,7 @@ return card;
 
 
 
+});
 
 
 
@@ -158,4 +176,3 @@ return card;
   bigknell
 */
 
-});
