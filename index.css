@@ -150,3 +150,17 @@ height: 40px;
 font-size: 1rem;
 border-radius: 6px;
 }
+.button2 {
+  display: block;
+  color: black;
+  padding: 8px;
+  text-align: center;
+  background-color: white;
+  margin:  0;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 6px;
+  }
+  

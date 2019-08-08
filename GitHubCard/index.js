@@ -126,6 +126,7 @@ oddlyLongDescription.textContent = 'Lorem ipsum dolor sit amet consectetur adipi
 button.addEventListener('click', event => {
   console.log('button clicked', event.target)
   oddlyLongDescription.classList.toggle('card-close');
+  button.classList.toggle('button2');
   
 })
 
