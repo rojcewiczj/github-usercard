@@ -51,6 +51,7 @@ const followers = document.createElement('p');
 const following = document.createElement('p');
 const bio = document.createElement('p');
 //////////////
+
 card.appendChild(img);
 card.appendChild(cardInfo);
 cardInfo.appendChild(name);
@@ -61,6 +62,14 @@ profile.appendChild(address);
 cardInfo.appendChild(followers);
 cardInfo.appendChild(following);
 cardInfo.appendChild(bio);
+///////////////
+
+card.classList.add('card');
+cardInfo.classList.add('card-info');
+name.classList.add('name');
+username.classList.add('username');
+///////////
+
 
 
 
