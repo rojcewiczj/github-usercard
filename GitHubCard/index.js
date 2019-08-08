@@ -5,21 +5,41 @@
 window.addEventListener('load', (e) => {
 
   const followersArray = [];
-axios.get('https://api.github.com/users/rojcewiczj')
-    .then( (response) => {
-      console.log(response)
-        // Remember response is an object, response.data is an array.
-      
-           let newFollower = new socialCardCreator(response);
-           cards.appendChild(newFollower);
-        
-    })
-    .catch( error => {
-        console.log("Error:", error);
-    })
+
+const cards = document.querySelector('.cards')
+console.log (cards);
 
 
 
+function ultimantCardCreator(follower) {
+
+  follower.forEach(element => {
+    followersArray.push('https://api.github.com/users/' + element);
+  })
+
+followersArray.forEach(element => {
+  axios.get(element)
+  .then( (response) => {
+    console.log(response)
+    let newFollower = new socialCardCreator(response);
+    cards.appendChild(newFollower);
+ 
+})
+.catch( error => {
+  console.log("Error:", error);
+})
+
+})
+
+}
+
+
+ultimantCardCreator(['rojcewiczj','rogermcconkiejr', 'Tyler668','tetondan' ,'dustinmyers','justsml']);
+
+  
+  
+  //luishrd
+  //bigknell
 
 
 
@@ -44,33 +64,11 @@ axios.get('https://api.github.com/users/rojcewiczj')
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
-const cards = document.querySelector('.cards')
-console.log (cards);
 
 
 
-function addFollower (follower) {
-  followersArray.push('https://api.github.com/users/' + follower);
-  return followersArray;
-}
-addFollower('rogermcconkiejr');
-addFollower('Tyler668');
 
-console.log(followersArray);
 
-followersArray.forEach(element => {
-  axios.get(element)
-  .then( (response) => {
-    console.log(response)
-    let newFollower = new socialCardCreator(response);
-    cards.appendChild(newFollower);
- 
-})
-.catch( error => {
-  console.log("Error:", error);
-})
-
-})
 
 
 function socialCardCreator (object) {
