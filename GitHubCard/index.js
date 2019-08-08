@@ -69,6 +69,15 @@ cardInfo.classList.add('card-info');
 name.classList.add('name');
 username.classList.add('username');
 ///////////
+img.src = object.data.avatar_url;
+name.textContent = object.data.name;
+username.textContent = object.data.login;
+location.textContent = object.data.location;
+address.textContent = object.data.url;
+followers.textContent = object.data.followers;
+following.textContent = object.data.following;
+bio.textContent = object.data.bio;
+//////
 
 
 
