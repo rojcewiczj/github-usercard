@@ -3,6 +3,8 @@
            https://api.github.com/users/<your name>
 */
 window.addEventListener('load', (e) => {
+
+  const followersArray = [];
 axios.get('https://api.github.com/users/rojcewiczj')
     .then( (response) => {
       console.log(response)
@@ -15,6 +17,13 @@ axios.get('https://api.github.com/users/rojcewiczj')
     .catch( error => {
         console.log("Error:", error);
     })
+
+
+
+
+
+
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -37,15 +46,33 @@ axios.get('https://api.github.com/users/rojcewiczj')
 */
 const cards = document.querySelector('.cards')
 console.log (cards);
-const followersArray = [];
+
+
+
 function addFollower (follower) {
-  followersArray.push(`https://api.github.com/users/${follower}`);
+  followersArray.push('https://api.github.com/users/' + follower);
   return followersArray;
 }
 addFollower('rogermcconkiejr');
-addFollower('')
+addFollower('Tyler668');
 
 console.log(followersArray);
+
+followersArray.forEach(element => {
+  axios.get(element)
+  .then( (response) => {
+    console.log(response)
+    let newFollower = new socialCardCreator(response);
+    cards.appendChild(newFollower);
+ 
+})
+.catch( error => {
+  console.log("Error:", error);
+})
+
+})
+
+
 function socialCardCreator (object) {
 
 const card = document.createElement('div');
