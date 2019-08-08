@@ -2,13 +2,15 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-console.log(axios.get('https://api.github.com/users/BigKnell'))
-    .then( response => {
+window.addEventListener('load', (e) => {
+axios.get('https://api.github.com/users/BigKnell')
+    .then( (response) => {
+      console.log(response)
         // Remember response is an object, response.data is an array.
-        response.data.forEach( item => {
-            let socialCard = socialCardCreator(item);
-            followersArray.appendChild(socialCard);
-        })
+      
+           let newFollower = new socialCardCreator(response);
+           cards.appendChild(newFollower);
+        
     })
     .catch( error => {
         console.log("Error:", error);
@@ -33,10 +35,10 @@ console.log(axios.get('https://api.github.com/users/BigKnell'))
           Using that array, iterate over it, requesting data for each user, creating a new card for each
           user, and adding that card to the DOM.
 */
-window.addEventListener('load', (e) => {
-
+const cards = document.querySelector('.cards')
+console.log (cards);
 const followersArray = [];
-
+console.log(followersArray);
 function socialCardCreator (object) {
 
 const card = document.createElement('div');
@@ -79,6 +81,7 @@ following.textContent = object.data.following;
 bio.textContent = object.data.bio;
 //////
 
+return card;
 
 
 
