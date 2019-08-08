@@ -3,7 +3,7 @@
            https://api.github.com/users/<your name>
 */
 window.addEventListener('load', (e) => {
-axios.get('https://api.github.com/users/BigKnell')
+axios.get('https://api.github.com/users/rojcewiczj')
     .then( (response) => {
       console.log(response)
         // Remember response is an object, response.data is an array.
@@ -38,6 +38,13 @@ axios.get('https://api.github.com/users/BigKnell')
 const cards = document.querySelector('.cards')
 console.log (cards);
 const followersArray = [];
+function addFollower (follower) {
+  followersArray.push(`https://api.github.com/users/${follower}`);
+  return followersArray;
+}
+addFollower('rogermcconkiejr');
+addFollower('')
+
 console.log(followersArray);
 function socialCardCreator (object) {
 
