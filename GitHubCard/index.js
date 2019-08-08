@@ -38,19 +38,29 @@ window.addEventListener('load', (e) => {
 const followersArray = [];
 
 function socialCardCreator (object) {
-  
+
 const card = document.createElement('div');
 const img = document.createElement('img');
 const cardInfo = document.createElement('div');
 const name = document.createElement('h3');
 const username = document.createElement('p');
 const location = document.createElement('p');
-const profle = document.createElement('p');
+const profile = document.createElement('p');
 const address = document.createElement('a');
 const followers = document.createElement('p');
 const following = document.createElement('p');
 const bio = document.createElement('p');
 //////////////
+card.appendChild(img);
+card.appendChild(cardInfo);
+cardInfo.appendChild(name);
+cardInfo.appendChild(username);
+cardInfo.appendChild(location);
+cardInfo.appendChild(profile);
+profile.appendChild(address);
+cardInfo.appendChild(followers);
+cardInfo.appendChild(following);
+cardInfo.appendChild(bio);
 
 
 
