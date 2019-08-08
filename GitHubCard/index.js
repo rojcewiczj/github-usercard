@@ -108,6 +108,7 @@ cardInfo.classList.add('card-info');
 name.classList.add('name');
 username.classList.add('username');
 oddlyLongDescription.classList.add('card-open');
+oddlyLongDescription.classList.add('card-close');
 button.classList.add('button')
 ///////////
 img.src = object.data.avatar_url;
@@ -124,7 +125,7 @@ oddlyLongDescription.textContent = 'Lorem ipsum dolor sit amet consectetur adipi
 
 button.addEventListener('click', event => {
   console.log('button clicked', event.target)
-  oddlyLongDescription.classList.toggle('card-open');
+  oddlyLongDescription.classList.toggle('card-close');
   
 })
 
