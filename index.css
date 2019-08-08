@@ -123,5 +123,44 @@ body {
   margin: 3px 0 10px;
 }
 
-
-
+.card-open {
+  display: none;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px -2px #000;
+  background-color: #FFF;
+  margin-bottom: 30px;
+  height: 400px;
+}
+.card-close {
+  display: none;
+}
+.button {
+display: block;
+color: white;
+padding: 8px;
+text-align: center;
+background-color: black;
+margin:  0;
+cursor: pointer;
+width: 100px;
+height: 40px;
+font-size: 1rem;
+border-radius: 6px;
+}
+.button2 {
+  display: block;
+  color: black;
+  padding: 8px;
+  text-align: center;
+  background-color: white;
+  margin:  0;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 6px;
+  }
+  
